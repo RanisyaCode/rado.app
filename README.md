@@ -1,83 +1,96 @@
+
 # Rado-App — To-Do List & Personal Task Manager
 
 ## Deskripsi
 
-Rado-App adalah aplikasi web manajemen tugas (*To-Do List*) yang dirancang untuk membantu pengguna mengatur kegiatan sehari-hari secara lebih terstruktur, praktis, dan produktif.
+Rado-App adalah aplikasi web To-Do List yang dirancang untuk membantu pengguna mengatur, mencatat, dan menyelesaikan tugas sehari-hari secara lebih terstruktur.
 
-Aplikasi ini memiliki tampilan yang modern, minimalis, dan aesthetic dengan dominasi warna biru. Rado-App dikembangkan menggunakan Laravel dengan Laravel Breeze untuk autentikasi pengguna serta Blade sebagai template antarmuka.
+Aplikasi ini memiliki desain modern, minimalis, dan aesthetic dengan dominasi warna biru. Rado-App dikembangkan menggunakan Laravel, Laravel Breeze, Blade, dan MySQL.
 
-## Fitur Utama
+## Fitur Aplikasi
 
-- **Autentikasi Pengguna:** Registrasi, login, dan logout menggunakan Laravel Breeze.
-- **Dashboard:** Menampilkan ringkasan dan statistik tugas pengguna.
-- **Manajemen Tugas:** Menambahkan, melihat, mengedit, dan menghapus tugas.
-- **Status Tugas:** Mengelompokkan tugas menjadi belum selesai, sedang dikerjakan, dan selesai.
-- **Prioritas Tugas:** Menentukan prioritas rendah, sedang, atau tinggi.
-- **Tenggat Waktu:** Mengatur tanggal dan waktu penyelesaian tugas.
-- **Kategori Tugas:** Mengelompokkan kegiatan berdasarkan kategori.
-- **Pencarian dan Filter:** Memudahkan pengguna menemukan tugas tertentu.
-- **Desain Responsif:** Tampilan yang menyesuaikan perangkat desktop, tablet, dan HP.
+- Registrasi akun pengguna.
+- Login dan logout.
+- Dashboard statistik tugas.
+- Menambahkan tugas baru.
+- Melihat daftar tugas.
+- Mengedit informasi tugas.
+- Menghapus tugas.
+- Mengubah status tugas.
+- Mengatur prioritas tugas: rendah, sedang, dan tinggi.
+- Mengatur tanggal dan waktu tenggat tugas.
+- Mengelompokkan tugas berdasarkan kategori.
+- Mencari dan memfilter tugas.
+- Melihat tugas yang sudah selesai.
+- Melihat tugas yang mendekati atau melewati tenggat.
+- Mengelola profil pengguna.
+- Tampilan responsif untuk laptop dan HP.
 
 ## Teknologi yang Digunakan
 
-- PHP
-- Laravel
-- Laravel Breeze
-- Blade Template Engine
-- HTML5
-- CSS3
-- JavaScript
-- MySQL
-- Vite
-- Laragon
+- **Backend:** Laravel 13
+- **Autentikasi:** Laravel Breeze
+- **Template:** Blade
+- **Frontend:** HTML5, CSS3, dan JavaScript
+- **Database:** MySQL
+- **PHP:** 8.3 atau lebih baru sesuai kebutuhan dependensi
+- **Package Manager PHP:** Composer
+- **Frontend Build Tool:** Vite
+- **Lingkungan Pengembangan:** Laragon
+- **Code Editor:** Visual Studio Code
 
 ## Persyaratan Sistem
 
-Pastikan perangkat telah memiliki:
+Sebelum menjalankan aplikasi, pastikan perangkat telah memiliki:
 
-- PHP versi 8.3 atau lebih baru yang kompatibel dengan proyek.
-- Composer.
-- Node.js dan npm.
-- MySQL.
-- Laragon atau lingkungan pengembangan web yang setara.
+1. PHP versi yang kompatibel dengan proyek.
+2. Composer.
+3. Node.js dan npm.
+4. MySQL.
+5. Laragon atau lingkungan pengembangan Laravel lainnya.
+6. Visual Studio Code atau editor kode lainnya.
 
-## Instalasi dan Menjalankan Aplikasi
+## Instalasi dan Konfigurasi
 
-### 1. Clone atau buka proyek
+### 1. Masuk ke Folder Proyek
 
-Buka terminal dan masuk ke direktori proyek Rado-App.
+Buka terminal dan jalankan:
 
 ```bash
 cd C:\laragon\www\rado-app
 ```
 
-### 2. Instal dependensi PHP
+### 2. Instal Dependensi Laravel
 
 ```bash
 composer install
 ```
 
-### 3. Konfigurasi environment
+### 3. Konfigurasi File Environment
 
-Salin file `.env.example` menjadi `.env` jika file `.env` belum tersedia.
+Jika file `.env` belum tersedia, salin file `.env.example` menjadi `.env`:
 
 ```bash
 copy .env.example .env
 ```
 
-Jika file `.env` sudah tersedia, jangan menimpanya.
+Jika `.env` sudah tersedia, gunakan file tersebut tanpa menimpanya.
 
-### 4. Generate application key
+### 4. Generate Application Key
 
 ```bash
 php artisan key:generate
 ```
 
-### 5. Konfigurasi database
+### 5. Buat Database MySQL
 
-Buat database MySQL bernama `rado_app` melalui phpMyAdmin atau HeidiSQL.
+Buka Laragon, aktifkan MySQL, lalu buat database dengan nama:
 
-Sesuaikan konfigurasi berikut pada file `.env`:
+```text
+rado_app
+```
+
+Sesuaikan konfigurasi database pada file `.env`:
 
 ```env
 APP_NAME=Rado-App
@@ -93,52 +106,51 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Sesuaikan nama database, username, dan password dengan konfigurasi MySQL yang digunakan.
+Sesuaikan username dan password dengan konfigurasi MySQL di komputer masing-masing.
 
-### 6. Jalankan migration
+### 6. Jalankan Migration
 
 ```bash
 php artisan migrate
 ```
 
-Jika proyek menyediakan seeder untuk data awal, jalankan sesuai kebutuhan.
+Perintah ini digunakan untuk membuat tabel database berdasarkan migration yang tersedia.
+
+Jika proyek menyediakan seeder dan kamu ingin mengisi data awal, periksa isi seeder terlebih dahulu sebelum menjalankannya.
 
 ```bash
 php artisan db:seed
 ```
 
-Jalankan seeder hanya jika sudah dipastikan aman untuk database yang digunakan.
-
-### 7. Instal dependensi frontend
+### 7. Instal Dependensi Frontend
 
 ```bash
 npm install
 ```
 
-### 8. Build aset frontend
+### 8. Build Aset Frontend
 
 ```bash
 npm run build
 ```
 
-Perintah ini menghasilkan aset frontend untuk digunakan oleh Laravel melalui Vite.
-
-### 9. Jalankan aplikasi
+### 9. Jalankan Aplikasi
 
 ```bash
 php artisan serve
 ```
 
-Buka browser dan akses:
+Buka browser dan akses alamat berikut:
 
 http://127.0.0.1:8000
 
-## Struktur Folder Utama
+## Struktur Folder
 
 ```text
 rado-app/
 ├── app/
-│   ├── Http/Controllers/
+│   ├── Http/
+│   │   └── Controllers/
 │   └── Models/
 ├── database/
 │   ├── migrations/
@@ -148,6 +160,11 @@ rado-app/
 │   ├── css/
 │   ├── js/
 │   └── views/
+│       ├── layouts/
+│       ├── auth/
+│       ├── tasks/
+│       ├── categories/
+│       └── dashboard.blade.php
 ├── routes/
 │   └── web.php
 ├── .env.example
@@ -157,14 +174,40 @@ rado-app/
 └── README.md
 ```
 
+## Alur Penggunaan Aplikasi
+
+1. Pengguna membuka halaman Rado-App.
+2. Pengguna membuat akun atau login.
+3. Pengguna masuk ke dashboard.
+4. Pengguna menambahkan tugas beserta deskripsi, kategori, prioritas, dan tenggat waktu.
+5. Pengguna dapat melihat, mengedit, mencari, memfilter, dan menghapus tugas.
+6. Pengguna memperbarui status tugas ketika mulai mengerjakan atau menyelesaikannya.
+7. Dashboard menampilkan ringkasan progres berdasarkan data tugas pengguna.
+
+## Keamanan Aplikasi
+
+Rado-App dirancang untuk menggunakan fitur keamanan Laravel, meliputi:
+
+- Autentikasi pengguna.
+- Password hashing.
+- Validasi input.
+- Perlindungan CSRF.
+- Pembatasan akses berdasarkan kepemilikan data.
+- Pengelolaan data menggunakan Eloquent ORM.
+
+Implementasi setiap fitur keamanan harus dipastikan tersedia dan berfungsi pada kode aplikasi.
+
 ## Tujuan Pengembangan
 
-Rado-App dikembangkan sebagai aplikasi pengelolaan tugas yang mudah digunakan, memiliki antarmuka yang menarik, dan membantu pengguna meningkatkan produktivitas melalui pencatatan serta pemantauan penyelesaian tugas.
+Rado-App bertujuan membantu pengguna meningkatkan produktivitas melalui pengelolaan tugas yang sederhana, terstruktur, dan mudah digunakan.
 
-## Pengembang
+Dengan tampilan biru yang nyaman dilihat serta fitur pengelolaan tugas yang terintegrasi, Rado-App diharapkan dapat menjadi alat bantu untuk mengatur aktivitas sehari-hari.
 
-**Nama Proyek:** Rado-App  
-**Kategori:** Web Application — To-Do List  
-**Framework:** Laravel  
-**Template:** Blade  
-**Database:** MySQL
+## Informasi Proyek
+
+- **Nama aplikasi:** Rado-App
+- **Jenis aplikasi:** To-Do List dan Personal Task Manager
+- **Framework:** Laravel
+- **Template frontend:** Blade
+- **Database:** MySQL
+- **Bahasa antarmuka:** Bahasa Indonesia
