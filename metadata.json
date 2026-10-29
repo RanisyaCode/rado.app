@@ -1,0 +1,6 @@
+{
+  "name": "Rado-App - To-Do List & Task Management",
+  "description": "Aplikasi To-Do List dan Task Management modern dengan tema biru pastel, manajemen prioritas, kalender tugas, dan pelacak produktivitas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
