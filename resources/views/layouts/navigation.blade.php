@@ -1,4 +1,8 @@
 @php
+    use App\Models\Task;
+@endphp
+
+@php
     $user = auth()->user();
     $todayCount = \App\Models\Task::where('user_id', $user->id)
         ->whereDate('due_at', now('Asia/Jakarta')->toDateString())

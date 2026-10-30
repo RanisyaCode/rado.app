@@ -1,3 +1,7 @@
+@php
+    use Illuminate\Support\Facades\Route;
+@endphp
+
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -77,22 +81,17 @@
         </button>
     </form>
 
-    <!-- Quick Demo Login Option -->
-    <div class="mt-6 pt-5 border-t border-slate-100">
-        <a
-            href="{{ route('demo.login') }}"
-            class="w-full py-2 px-3 rounded-xl border border-blue-200 bg-[#EAF2FF] hover:bg-blue-100 text-[#4F7DF3] text-xs font-bold transition-all flex items-center justify-center gap-2"
-        >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-            <span>Masuk Cepat sebagai Rani Syaeka (Demo)</span>
-        </a>
-    </div>
-
     <!-- Register Link -->
     <div class="mt-4 text-center text-xs text-slate-500">
         Belum memiliki akun?
         <a href="{{ route('register') }}" class="font-bold text-[#4F7DF3] hover:underline">
             Daftar Sekarang
+        </a>
+    </div>
+    <div class="mt-4 text-center text-xs text-slate-500">
+        Kembali ke
+        <a href="{{ route('welcome') }}" class="font-bold text-[#4F7DF3] hover:underline">
+            Beranda
         </a>
     </div>
 </x-guest-layout>
