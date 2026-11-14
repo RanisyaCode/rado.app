@@ -49,18 +49,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Right: Quick Actions -->
-                    <div class="flex items-center gap-2 sm:gap-3">
-                        <button
-                            type="button"
-                            @click="createTaskModal = true"
-                            class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 bg-[#4F7DF3] hover:bg-[#3E6DE8] text-white text-xs sm:text-sm font-semibold rounded-xl shadow-sm shadow-[#4F7DF3]/25 transition-all duration-150 active:scale-95"
-                        >
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
-                            <span>Tambah Tugas</span>
-                        </button>
-                    </div>
                 </div>
             </header>
 

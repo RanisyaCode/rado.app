@@ -42,14 +42,6 @@
             </a>
 
             <div class="navbar-actions">
-
-                <button type="button"
-                        class="code-guide-btn"
-                        id="openCodeGuide">
-                    <i class="bi bi-code-slash"></i>
-                    <span>Kode Laravel 11</span>
-                </button>
-
                 @auth
                     <a href="{{ route('dashboard') }}" class="btn-dashboard">
                         <span>Buka Dashboard</span>
@@ -78,11 +70,6 @@
 
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
-
-        <button type="button" id="mobileCodeGuide">
-            <i class="bi bi-code-slash"></i>
-            Kode Laravel 11
-        </button>
 
         @auth
             <a href="{{ route('dashboard') }}">
@@ -428,65 +415,6 @@
         </div>
 
     </footer>
-
-
-    <!-- CODE GUIDE MODAL -->
-    <div class="modal-overlay" id="codeGuideModal">
-
-        <div class="code-modal">
-
-            <button type="button" class="modal-close" id="closeCodeGuide"
-                    aria-label="Tutup">
-                <i class="bi bi-x-lg"></i>
-            </button>
-
-            <div class="modal-icon">
-                <i class="bi bi-code-slash"></i>
-            </div>
-
-            <h2>Rado-App Architecture</h2>
-
-            <p>
-                Rado-App dibangun menggunakan teknologi berikut:
-            </p>
-
-            <div class="technology-list">
-
-                <div>
-                    <i class="bi bi-check-circle-fill"></i>
-                    Laravel 11
-                </div>
-
-                <div>
-                    <i class="bi bi-check-circle-fill"></i>
-                    Laravel Breeze Authentication
-                </div>
-
-                <div>
-                    <i class="bi bi-check-circle-fill"></i>
-                    Blade Template Engine
-                </div>
-
-                <div>
-                    <i class="bi bi-check-circle-fill"></i>
-                    HTML, CSS & JavaScript
-                </div>
-
-                <div>
-                    <i class="bi bi-check-circle-fill"></i>
-                    MySQL Database
-                </div>
-
-            </div>
-
-            <button type="button" class="btn-primary modal-button"
-                    id="closeCodeGuideBottom">
-                Mengerti
-            </button>
-
-        </div>
-
-    </div>
 
 
     <!-- JAVASCRIPT -->
