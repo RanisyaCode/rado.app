@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    @include('components.success-alert')
 
     <!-- NAVBAR -->
     <header class="navbar">
@@ -415,7 +416,6 @@
         </div>
 
     </footer>
-
 
     <!-- JAVASCRIPT -->
     <script src="{{ asset('js/landing.js') }}"></script>

@@ -17,6 +17,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased bg-[#F7F9FF] text-[#1E293B] selection:bg-[#4F7DF3] selection:text-white" x-data="{ mobileMenuOpen: false, createTaskModal: false }">
+
+    {{-- GLOBAL SUCCESS ALERT --}}
+    @include('components.success-alert')
+
     <div class="min-h-screen flex flex-col lg:flex-row">
         <!-- Sidebar Navigation (Desktop & Mobile Drawer) -->
         @include('layouts.navigation')
@@ -54,19 +58,6 @@
 
             <!-- Page Content -->
             <main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
-                <!-- Flash Messages -->
-                @if (session('success'))
-                    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 4000)" class="mb-5 p-4 rounded-2xl bg-white border border-emerald-200 text-slate-800 shadow-md shadow-emerald-500/5 flex items-center justify-between gap-3 animate-in fade-in">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                            </div>
-                            <p class="text-xs sm:text-sm font-medium text-slate-800">{{ session('success') }}</p>
-                        </div>
-                        <button @click="show = false" class="text-slate-400 hover:text-slate-600">✕</button>
-                    </div>
-                @endif
-
                 @if (session('info'))
                     <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 4000)" class="mb-5 p-4 rounded-2xl bg-white border border-blue-200 text-slate-800 shadow-md shadow-blue-500/5 flex items-center justify-between gap-3 animate-in fade-in">
                         <div class="flex items-center gap-3">
